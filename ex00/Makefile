@@ -12,6 +12,11 @@ OBJS_DIR			= ./objs/
 
 # Source files
 CFILES_ROOT			= main.cpp \
+					  Animal.cpp \
+					  Dog.cpp \
+					  Cat.cpp \
+					  WrongAnimal.cpp \
+					  WrongCat.cpp \
 
 OBJ_FILES 			:= $(CFILES_ROOT:.cpp=.o)
 DEP_FILES 			:= $(CFILES_ROOT:.cpp=.d)
@@ -20,7 +25,7 @@ OBJS				:= $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 DEPENDENCIES		:= $(addprefix $(OBJS_DIR), $(DEP_FILES))
 
 # Compilation variables
-NAME				= diamondTrap
+NAME				= polymorphism
 CXX 				= c++
 CXXFLAGS 			= -Wall -Werror -Wextra -std=c++98 -MMD -MP
 RM 					= rm -rf
