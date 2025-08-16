@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 15:59:29 by tluegham          #+#    #+#             */
-/*   Updated: 2025/08/15 20:25:00 by tluegham         ###   ########.fr       */
+/*   Updated: 2025/08/16 21:18:23 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 Animal::Animal(void)
 {
-	m_type = "...";
 	std::cout << "Animal default constructor called" << std::endl;
+	m_type = "...";
 }
 
 Animal::Animal(const Animal &other)
 {
-	m_type = other.m_type;
 	std::cout << "Animal copy constructor called" << std::endl;
+	m_type = other.m_type;
 }
 
 Animal::~Animal(void)

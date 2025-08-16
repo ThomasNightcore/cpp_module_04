@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:58:16 by tluegham          #+#    #+#             */
-/*   Updated: 2025/08/15 20:12:39 by tluegham         ###   ########.fr       */
+/*   Updated: 2025/08/16 21:18:29 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 Dog::Dog(void)
 {
-	m_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
+	m_type = "Dog";
 }
 
 Dog::Dog(const Dog &other)
 {
-	m_type = other.m_type;
 	std::cout << "Dog copy constructor called" << std::endl;
+	m_type = other.m_type;
 }
 
 Dog::~Dog(void)

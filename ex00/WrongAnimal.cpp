@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 20:23:33 by tluegham          #+#    #+#             */
-/*   Updated: 2025/08/15 20:24:13 by tluegham         ###   ########.fr       */
+/*   Updated: 2025/08/16 21:18:29 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	m_type = "...";
 	std::cout << "WrongAnimal default constructor called" << std::endl;
+	m_type = "...";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
-	m_type = other.m_type;
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
+	m_type = other.m_type;
 }
 
 WrongAnimal::~WrongAnimal(void)
