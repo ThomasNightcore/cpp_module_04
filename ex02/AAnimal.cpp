@@ -41,11 +41,6 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 	return *this;
 }
 
-void AAnimal::makeSound(void) const
-{
-	std::cout << "Animal doesn't make a sound..." << std::endl;
-}
-
 const std::string &AAnimal::getType(void) const 
 {
 	return m_type;
