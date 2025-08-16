@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:58:16 by tluegham          #+#    #+#             */
-/*   Updated: 2025/08/15 22:16:13 by tluegham         ###   ########.fr       */
+/*   Updated: 2025/08/16 19:29:50 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 Dog::Dog(void)
 {
+	std::cout << "Dog default constructor called" << std::endl;
 	m_type = "Dog";
 	m_brain = new Brain();
-	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
+	std::cout << "Dog copy constructor called" << std::endl;
 	m_type = other.m_type;
 	m_brain = new Brain(*other.m_brain);
-	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog(void)
 {
-	delete m_brain;
 	std::cout << "Dog destructor called" << std::endl;
+	delete m_brain;
 }
 
 Dog &Dog::operator=(const Dog &other)
@@ -59,13 +59,18 @@ void Dog::fillIdeas(const int &amount)
 	{
 		strstream << i;	
 		m_brain->addIdea("idea " + strstream.str());
-		strstream.clear();
+		strstream.str("");
 	}
 }
 
 void Dog::showIdeas() const
 {
 	int size = m_brain->getSize();
+	if (size == 0)
+	{
+		std::cout << "This dog has no thoughts" << std::endl;
+		return;
+	}
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << m_brain->getIdeaAt(i) << std::endl;
