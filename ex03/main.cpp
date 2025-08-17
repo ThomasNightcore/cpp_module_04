@@ -6,11 +6,14 @@
 /*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 21:42:50 by nightcore         #+#    #+#             */
-/*   Updated: 2025/08/16 21:43:16 by nightcore        ###   ########.fr       */
+/*   Updated: 2025/08/17 18:47:28 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main(void)
 {
