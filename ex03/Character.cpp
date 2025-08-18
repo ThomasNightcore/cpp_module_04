@@ -6,7 +6,7 @@
 /*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 19:43:11 by nightcore         #+#    #+#             */
-/*   Updated: 2025/08/17 20:03:29 by nightcore        ###   ########.fr       */
+/*   Updated: 2025/08/18 02:32:27 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ Character &Character::operator=(const Character &other)
         m_name = other.m_name;
         for (int i = 0; i < INVENTORY_SIZE; i++)
         {
+            if (m_inventory[i] != NULL)
+                delete m_inventory[i];
             AMateria *mat = other.m_inventory[i];
             m_inventory[i] = (mat != NULL) ? mat->clone() : NULL;
         }
@@ -75,7 +77,7 @@ void Character::equip(AMateria *m)
 {
     for (int i = 0; i < INVENTORY_SIZE; i++)
     {
-        if (m_inventory[i] == NULL)
+        if (m_inventory[i] != NULL)
             continue;
 
         m_inventory[i] = m;
@@ -94,6 +96,9 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
     if (idx < 0 || idx >= INVENTORY_SIZE)
+        return;
+
+    if (m_inventory[idx] == NULL)
         return;
 
     m_inventory[idx]->use(target);

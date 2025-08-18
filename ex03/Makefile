@@ -4,6 +4,7 @@
 
 # Source file directories
 SRCS_DIR			= ./
+TEST_DIR			= ./tests/
 
 INCLUDES_DIR		= ./
 
@@ -18,8 +19,15 @@ CFILES_ROOT			= main.cpp \
 					  MateriaSource.cpp \
 					  Character.cpp \
 
-OBJ_FILES 			:= $(CFILES_ROOT:.cpp=.o)
-DEP_FILES 			:= $(CFILES_ROOT:.cpp=.d)
+CFILES_TEST			= subjectTest.cpp \
+					  customTests.cpp \
+					  classTests.cpp
+
+OBJ_FILES 			:= $(CFILES_ROOT:.cpp=.o) \
+		 			   $(CFILES_TEST:.cpp=.o)
+
+DEP_FILES 			:= $(CFILES_ROOT:.cpp=.d) \
+		 			   $(CFILES_TEST:.cpp=.d)
 
 OBJS				:= $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 DEPENDENCIES		:= $(addprefix $(OBJS_DIR), $(DEP_FILES))
@@ -63,3 +71,7 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.cpp
 	@mkdir -p $(OBJS_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+-include $(DEPENDENCIES)
+$(OBJS_DIR)%.o: $(TEST_DIR)%.cpp
+	@mkdir -p $(OBJS_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@

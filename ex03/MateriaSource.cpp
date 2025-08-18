@@ -6,7 +6,7 @@
 /*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 20:38:51 by nightcore         #+#    #+#             */
-/*   Updated: 2025/08/17 20:53:16 by nightcore        ###   ########.fr       */
+/*   Updated: 2025/08/18 01:58:01 by nightcore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
     for (int i = 0; i < INVENTORY_SIZE; i++)
     {
+        if (m_learnInventory[i] != NULL)
+            delete m_learnInventory[i];
+
         AMateria *tmp = other.m_learnInventory[i];
         m_learnInventory[i] = (tmp != NULL) ? tmp->clone() : NULL;
     }
@@ -60,9 +63,18 @@ void MateriaSource::learnMateria(AMateria *materia)
             continue;
 
         m_learnInventory[i] = materia;
-        break;
+
+        /*
+        std::cout << "Successfully learned Materia of type: [" 
+                  << materia->getType() << "]" << std::endl;
+        */
+        return;
     }
 
+    /*
+    std::cout << "Could not learn Materia of type: [" 
+              << materia->getType() << "]" << std::endl;
+    */
     return;
 }
 
