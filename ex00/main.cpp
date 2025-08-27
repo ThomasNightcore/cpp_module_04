@@ -6,7 +6,7 @@
 /*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 21:51:01 by tluegham          #+#    #+#             */
-/*   Updated: 2025/08/15 20:34:04 by tluegham         ###   ########.fr       */
+/*   Updated: 2025/08/27 13:45:50 by tluegham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main()
 		const WrongAnimal *wrongCat = new WrongCat();
 
 		std::cout << std::endl << "=============== Checking types ===============" << std::endl;
-		std::cout << "Cat:    \'" << wrongCat->getType() << "\'" << std::endl;
-		std::cout << "Animal: \'" << wrongAnimal->getType() << "\'" << std::endl;
+		std::cout << "WrongCat:    \'" << wrongCat->getType() << "\'" << std::endl;
+		std::cout << "WrongAnimal: \'" << wrongAnimal->getType() << "\'" << std::endl;
 
 		std::cout << std::endl << "=============== Checking sounds ===============" << std::endl;
 		std::cout << "== Cat:" << std::endl;
