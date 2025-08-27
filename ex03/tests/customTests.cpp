@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   customTests.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nightcore <nightcore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tluegham <tluegham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 23:26:01 by nightcore         #+#    #+#             */
-/*   Updated: 2025/08/18 12:37:15 by nightcore        ###   ########.fr       */
+/*   Updated: 2025/08/27 17:00:37 by tluegham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void runCustomTests(void)
 
     std::cout << std::endl
               << "=========="
-              << " Checking for leaks when unequiping Materia "
+              << " Checking more unequiping Materia "
               << "==========" << std::endl;
     testUnequipingLeaks();
 }
